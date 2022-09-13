@@ -1,26 +1,14 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Blog App
 
-> Description the project.
-
+> The Blog app will be a classic example of a blog website. A fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
+- Ruby on Rails
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
@@ -28,29 +16,38 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
+Cloning a repository
+
+- On GitHub.com, navigate to the main page of the repository;
+
+- Above the list of files, click "Code" button;
+
+- Copy the URL to clone the repository.
+
+  - To clone the repository using HTTPS : `https://github.com/darikmohammed/blog-app.git`
+
+  - To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority : `git@github.com:darikmohammed/blog-app.git`
+
+  - To clone a repository using GitHub CLI : `gh repo clone darikmohammed/blog-app`
+
+- Open Terminal;
+
+- Change the current working directory to the location where you want the cloned directory;
+
+- Type `git clone`, and then paste the URL you copied earlier;
+
 ### Install
 
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+- To install necessary gem files in your machine run `bundle install` on your terminal.
+- To run your machine locally run `rails server` on your terminal.
 
 ## Authors
 
-👤 **Author1**
+👤 **Darik Mohammed**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/darikmohammed)
+- Twitter: [@twitterhandle](https://twitter.com/r_darik)
+- LinkedIn: [darikmohammed](https://www.linkedin.com/in/darik-mohammed/)
 
 ## 🤝 Contributing
 
@@ -64,9 +61,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse
+- Stack Overflow
+- [Ruby on Rails](https://rubyonrails.org/)
 
 ## 📝 License
 
