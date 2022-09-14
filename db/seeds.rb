@@ -6,12 +6,12 @@ second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-
 
 # Create at least 4 posts written by one of the users you created by running the following code:
 (1..4).each do |i|
-  Post.create(user: first_user, title: "My Post #{i}", text: "This is my #{i} post")
+  Post.create(author: first_user, title: "My Post #{i}", text: "This is my #{i} post")
 end
 
 
 # Create at least 6 posts comments for one of the posts you created by running the following code:
 first_post = Post.first
 (1..6).each do |i|
-  Comment.create(post: first_post, user: second_user, text: "Hi Tom! My #{i} comment" )
+  Comment.create(post: first_post, author: second_user, text: "Hi Tom! My #{i} comment" )
 end
