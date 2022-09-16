@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before :each do
-    @first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', posts_counter: 0)
+    @first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                              bio: 'Teacher from Mexico.', posts_counter: 0)
     @first_user.save
   end
 
@@ -12,16 +13,17 @@ RSpec.describe User, type: :model do
     end
 
     it 'should have name.' do
-      test_user = User.new( photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', posts_counter: 0)
+      test_user = User.new(photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.',
+                           posts_counter: 0)
       expect(test_user).to_not be_valid
     end
 
     it 'should have post.' do
-      test_user = User.new(name:'TOm', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+      test_user = User.new(name: 'TOm', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
       expect(test_user).to_not be_valid
     end
     it 'post_counter should be greater than 0' do
-      @first_user.posts_counter =-1
+      @first_user.posts_counter = -1
       expect(@first_user).to_not be_valid
     end
   end
@@ -33,7 +35,7 @@ RSpec.describe User, type: :model do
       first_post.save
       post = @first_user.recent_post
 
-      expect(post).to eq ([first_post])
+      expect(post).to eq([first_post])
     end
 
     it 'should return recent 3 posts' do
@@ -52,6 +54,5 @@ RSpec.describe User, type: :model do
       recently_post = @first_user.recent_post
       expect(recently_post).to eq([fourth_post, third_post, second_post])
     end
-
   end
 end
