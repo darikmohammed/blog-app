@@ -18,7 +18,7 @@ RSpec.describe 'Posts', type: :request do
 
   describe 'GET /show' do
     before(:each) do
-      get user_post_path(user_id: 1, id:1)
+      get user_post_path(user_id: 1, id: 1)
     end
     it 'returns http success' do
       expect(response).to have_http_status(:success)
