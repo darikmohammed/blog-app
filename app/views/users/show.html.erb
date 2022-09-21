@@ -1,2 +1,30 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div>
+  <div>
+    <div>
+      <%= image_tag @user.photo %>
+    </div>
+    <div>
+      <h1><%= @user.name %></h1>
+      <p><%= @user.posts_counter%> posts</p>
+    </div>
+  </div>
+
+  <div>
+    <p><%= @user.bio %></p>
+  </div>
+
+  <div>
+    <%@recent_posts.each_with_index do |post, idx|%>
+      <div>
+        <p>Post <%= idx + 1 %></p>
+        <h2><%= post.title %></h2>
+        <p><%= post.text %></p>
+
+        <div>
+          <p><%=post.comments_counter %> comments</p>
+          <p><%=post.likes_counter %> likes</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
