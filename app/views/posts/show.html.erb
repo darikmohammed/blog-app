@@ -1,2 +1,30 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div>
+  <div>
+    <div>
+      <h2><%= @post.author.name %></h2>
+      <div>
+        <p><%= @post.comments_counter %> Comments</p>
+        <p><%= @post.likes_counter %> Likes</p>
+      </div>
+    </div>
+
+    <div>
+      <h2><%= @post.title %></h2>
+      <p><%= @post.text %></p>
+    </div>
+  </div>
+
+  <div>
+    <% @post.comments.each do |comment| %>
+      <div>
+        <div>
+          <%= image_tag comment.author.photo %>
+          <p><%= comment.author.name %></p>
+        </div>
+        <div>
+          <p><%= comment.text %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
