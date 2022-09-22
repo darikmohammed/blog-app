@@ -1,19 +1,20 @@
-<h1>Current Available Users</h1>
+<h1 class='text-5xl my-4'>Users</h1>
 <h3>Select one to see there detailed post.</h3>
 
-<div>
+<div class='flex flex-col gap-8 mt-8'>
   <% @users.each do |user|%>
-  <div>
-    <div>
-      <%= image_tag user.photo %>
-    </div>
-    <h2>
-      <%= user.name %>
-    </h2>
-    <p>
-      <%= user.posts_counter %>
-      posts
-    </p>
-  </div>
+    <%= link_to user_path(id: user.id) do %>
+      <div class= 'flex gap-8 items-center'>
+        <img src="<%= user.photo %>" alt="<%= user.name %>" class='w-32 h-32 rounded-full'>
+        <h2 class=' text-3xl'>
+          <%= user.name %>
+        </h2>
+        <p>
+          <%= user.posts_counter %>
+          posts
+        </p>
+      </div>
+    <%end %>
+
   <% end %>
 </div>

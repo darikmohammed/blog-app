@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.includes(:comments,:author).find_by(id:params[:id], author_id: params[:user_id])
+    @post = Post.find_by(id:params[:id], author_id: params[:user_id])
+    @comments = @post.most_recent_comments
   end
 end
