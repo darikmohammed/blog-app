@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     @recent_comments = @post.most_recent_comments
   end
   def create
-    comment = Comment.new(author_id: params[:user_id], post_id: params[:post_id], text: params[:text])
+    comment = Comment.new(author: current_user, post_id: params[:post_id], text: params[:text])
     comment.save
 
     if comment.save
