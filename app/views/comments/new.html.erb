@@ -1,4 +1,45 @@
-<div>
-  <h1 class="font-bold text-4xl">Comments#new</h1>
-  <p>Find me in app/views/comments/new.html.erb</p>
+<div class= ' flex flex-col gap-4 mt-4'>
+  <div class='flex flex-col gap-4 shadow-md shadow-slate-400 p-4 rounded-md'>
+    <div class='flex flex-col'>
+      <h2 class=' text-3xl font-bold mb-8 '>Author: <%= @user.name %></h2>
+      <div class='flex flex-col gap-4'>
+        <h2 class=' text-3xl'><%= @post.title %></h2>
+        <p class=' pl-8'><%= @post.text %></p>
+      </div>
+      <div class='flex gap-4 self-end bg-orange-200 p-4 rounded-md'>
+        <p><%= @post.comments_counter %> Comments</p>
+        <p><%= @post.likes_counter %> Likes</p>
+      </div>
+    </div>
+  </div>
+<!--  forms to add comment-->
+  <div class=' bg-slate-500 p-4 rounded-lg'>
+    <%= form_with url: user_post_comments_path do |form| %>
+      <div class="flex flex-col gap-8">
+        <div class="flex flex-col gap-4">
+          <%= form.label :text, "Enter Comment:", class:'text-white' %>
+          <%= form.text_field :text, class: 'rounded-full' %>
+        </div>
+
+        <%= form.submit "Add comment", class: 'text-white' %>
+
+
+      </div>
+    <% end %>
+  </div>
+
+  <div class='flex flex-col gap-8 my-8 shadow-md shadow-slate-400 p-4 rounded-md'>
+    <h2 class=' text-2xl'>Comments</h2>
+    <% @recent_comments.each do |comment| %>
+      <div class=' flex gap-4 items-center'>
+        <div class=' flex gap-4 justify-start items-center px-4 border-r-4'>
+          <img src="<%= comment.author.photo %>" alt="<%= comment.author.name %>" class='w-16 h-16 rounded-full'>
+          <p><%= comment.author.name %></p>
+        </div>
+        <div class='pl-8'>
+          <p><%= comment.text %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
