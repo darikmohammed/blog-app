@@ -15,7 +15,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(author: current_user, title: params[:title], text: params[:text], comments_counter: 0, likes_counter:0)
+    post = Post.new(author: current_user, title: params[:title], text: params[:text], comments_counter: 0,
+                    likes_counter: 0)
     post.save
 
     if post.save

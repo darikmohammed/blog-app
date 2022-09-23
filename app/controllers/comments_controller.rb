@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @recent_comments = @post.most_recent_comments
   end
+
   def create
     comment = Comment.new(author: current_user, post_id: params[:post_id], text: params[:text])
     comment.save
