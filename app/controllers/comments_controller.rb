@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
   def new
-    @post_holder_user = User.find(params[:user_id])
+    @user = User.find(params[:user_id])
     @post = Post.find(params[:post_id])
+    @recent_comments = @post.most_recent_comments
   end
   def create
 
