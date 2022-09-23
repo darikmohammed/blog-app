@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     post.save
 
     if post.save
-      redirect_to user_path(current_user)
+      redirect_to user_posts_path(current_user)
     else
       redirect_to new_user_post_path
     end
