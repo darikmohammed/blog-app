@@ -6,7 +6,7 @@ RSpec.describe 'User Show page:', type: :feature do
                 bio: 'Teacher from Mexico.', posts_counter: 0)
   end
   let!(:post) do
-    Post.create(author: user, title: "Tom post 1.", text: "Post 1 by Tom.",
+    Post.create(author: user, title: 'Tom post 1.', text: 'Post 1 by Tom.',
                 comments_counter: 0, likes_counter: 0)
   end
 
@@ -42,7 +42,6 @@ RSpec.describe 'User Show page:', type: :feature do
   it "should redirect to the post's how page when I click the user's post" do
     click_on 'Post 1'
 
-    expect(page).to have_current_path( user_post_path(user,post))
+    expect(page).to have_current_path(user_post_path(user, post))
   end
-
 end

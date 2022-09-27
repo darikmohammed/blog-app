@@ -8,7 +8,7 @@ RSpec.describe 'User Index page:', type: :feature do
   before(:each) do
     visit users_path
   end
-  it "should show the root directory" do
+  it 'should show the root directory' do
     visit '/'
     expect(current_path).to eq(root_path)
   end
