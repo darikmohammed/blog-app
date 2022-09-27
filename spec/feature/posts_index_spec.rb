@@ -38,6 +38,9 @@ RSpec.describe 'Post Index page:', type: :feature do
     expect(page).to have_text(@comment_one.text)
   end
 
+  it "should have the post's comments number" do
+    expect(page).to have_text(/#{@post_one.comments_counter} comments/i)
+  end
 
   it 'should have how many likes a post has' do
     expect(page).to have_text(/#{@post_one.likes_counter} likes/)
