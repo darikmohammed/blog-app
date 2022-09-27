@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'User Index page:', type: :feature do
+RSpec.describe 'User Show page:', type: :feature do
   let!(:user) do
     User.create(name: 'Tom', photo: 'https://images.unsplash.com/photo-1461948573049-a5ab4efb6150?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2865&q=80',
                 bio: 'Teacher from Mexico.', posts_counter: 0)
