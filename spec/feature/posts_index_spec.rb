@@ -6,6 +6,7 @@ RSpec.describe 'Post Index page:', type: :feature do
                               bio: 'Teacher from Mexico.', posts_counter: 0)
     @post_one = Post.create(author: @first_user, title: 'Tom post 1.', text: 'Post 1 by Tom.',
                             comments_counter: 0, likes_counter: 0)
+    @comment_one = Comment.create(author: @first_user, post: @post_one, text: 'Comment 1 by Tom.')
   end
 
   before(:each) do
@@ -32,12 +33,11 @@ RSpec.describe 'Post Index page:', type: :feature do
     expect(page).to have_text(@post_one.text)
   end
 
-  it 'should have the first comments on a post' do
-    @comment = Comment.create(post: @post_one, author: @first_user, text: 'Hi Tom! My 1 comment')
+  it "should have the first comments on the post" do
     visit user_post_path(@first_user, @post_one)
-
-    expect(page).to have_text(@comment.text)
+    expect(page).to have_text(@comment_one.text)
   end
+
 
   it 'should have how many likes a post has' do
     expect(page).to have_text(/#{@post_one.likes_counter} likes/)
