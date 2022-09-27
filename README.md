@@ -49,6 +49,13 @@ Cloning a repository
 - Twitter: [@twitterhandle](https://twitter.com/r_darik)
 - LinkedIn: [darikmohammed](https://www.linkedin.com/in/darik-mohammed/)
 
+## Collaborator 
+
+👤 **Isaac Pitwa**
+- GitHub: [@isaacpitwa](https://github.com/isaacpitwa)
+- Twitter: [@isaacpitwa](https://twitter.com/isaacpitwa)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/isaac-pitwa)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!

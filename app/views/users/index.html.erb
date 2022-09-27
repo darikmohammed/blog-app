@@ -3,18 +3,21 @@
 
 <div class='flex flex-col gap-8 mt-8'>
   <% @users.each do |user|%>
-    <%= link_to user_path(id: user.id) do %>
-      <div class= 'flex gap-8 items-center'>
-        <img src="<%= user.photo %>" alt="<%= user.name %>" class='w-32 h-32 rounded-full'>
-        <h2 class=' text-3xl'>
-          <%= user.name %>
-        </h2>
-        <p>
-          <%= user.posts_counter %>
-          posts
-        </p>
+      <div class= 'flex gap-8 items-center' id="<%= user.id %>">
+        <%= link_to user_path(id: user.id) do %>
+          <div class= 'flex gap-8 items-center'>
+            <img src="<%= user.photo %>" alt="<%= user.name %>" class='w-32 h-32 rounded-full'>
+            <h2 class=' text-3xl'>
+              <%= user.name %>
+            </h2>
+            <p>
+              <%= user.posts_counter %>
+              posts
+            </p>
+          </div>
+
+        <%end %>
       </div>
-    <%end %>
 
   <% end %>
 </div>
