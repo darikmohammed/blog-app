@@ -33,7 +33,7 @@ RSpec.describe 'Post Index page:', type: :feature do
     expect(page).to have_text(@post_one.text)
   end
 
-  it "should have the first comments on the post" do
+  it 'should have the first comments on the post' do
     visit user_post_path(@first_user, @post_one)
     expect(page).to have_text(@comment_one.text)
   end
