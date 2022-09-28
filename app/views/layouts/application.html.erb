@@ -12,7 +12,9 @@
   </head>
 
   <body>
-    <main class="container mx-auto px-5">
+    <main class="container mx-auto px-5 flex flex-col gap-4">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </main>
   </body>
