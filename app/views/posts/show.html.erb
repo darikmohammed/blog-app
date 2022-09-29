@@ -17,6 +17,11 @@
         <div class="self-end shadow-md shadow-slate-400 p-4 rounded-md mt-4">
           <%= button_to "Like Post", user_post_likes_path(user_id: @post.author.id, post_id: @post.id), method:'post' %>
         </div>
+        <% if can? :destroy, @post %>
+          <div class="self-end shadow-md shadow-slate-400 p-4 rounded-md mt-4">
+            <%= button_to "Delete Post", user_post_path(user_id: @post.author.id, post_id: @post.id), method: :delete %>
+          </div>
+        <%end %>
       </div>
 
     </div>

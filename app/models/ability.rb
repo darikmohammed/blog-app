@@ -10,9 +10,9 @@ class Ability
 
     return unless user.present?
 
-    can :manage, Post, user_id: user.id
+    can :manage, Post, author_id: user.id
 
-    return unless user.is? :admin
+    return unless user.role == 'admin'
 
     can :manage, :all
     #
