@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
   def create
     comment = Comment.new(author: current_user, post_id: params[:post_id], text: params[:text])
     comment.save
-
     if comment.save
       redirect_to user_post_path(user_id: params[:user_id], id: params[:post_id])
     else
@@ -19,7 +18,6 @@ class CommentsController < ApplicationController
   def destroy
     comment = Comment.find(params[:id])
     comment.destroy
-
     redirect_back(fallback_location: root_path)
   end
 end
