@@ -15,4 +15,11 @@ class CommentsController < ApplicationController
       redirect_to new_user_post_comment_path
     end
   end
+
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy
+
+    redirect_back(fallback_location: root_path)
+  end
 end
