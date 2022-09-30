@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  post 'authenticate', to: 'authentication#authenticate'
+  post '/auth/signup', to:'authentication#signup'
+
   root 'users#index'
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :show, :new, :create, :destroy] do
