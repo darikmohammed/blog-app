@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-
     respond_to do |format|
       format.json do
         authenticate_request
