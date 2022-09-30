@@ -12,4 +12,7 @@ class User < ApplicationRecord
   def recent_post
     Post.where(author: self).order(created_at: :desc).limit(3)
   end
+  def authenticate(pwd)
+    password == pwd
+  end
 end
