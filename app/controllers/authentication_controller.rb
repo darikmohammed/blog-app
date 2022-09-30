@@ -12,8 +12,11 @@ class AuthenticationController < ApplicationController
   end
 
   def signup
-    @user = User.new(name: params[:name], photo: params[:photo], bio: params[:bio], posts_counter: 0,
-                     email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
+    @user = User.new(
+      name: params[:name], photo: params[:photo], bio: params[:bio], posts_counter: 0,
+      email: params[:email], password: params[:password],
+      password_confirmation: params[:password_confirmation]
+    )
     if @user.save
       render json: @user, status: :created
     else
